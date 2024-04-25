@@ -14,6 +14,9 @@ steps:
       - "strapi-testing"
       - "--image"
       - "gcr.io/$PROJECT_ID/strapi-testing:$COMMIT_SHA"
+      - "--allow-unauthenticated"
+      - "--max-instances"
+      - "3"
       - "--region"
       - "asia-east1"
 images:
