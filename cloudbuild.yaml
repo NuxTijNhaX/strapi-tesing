@@ -34,5 +34,7 @@ steps:
       - "name=sqlite-volme,type=cloud-storage,bucket=sqlite-volumn"
       - "--add-volume-mount"
       - "volume=sqlite-volme,mount-path=/sqlite"
+      - "--region"
+      - "asia-east1"
 images:
   - "gcr.io/$PROJECT_ID/strapi-testing:$COMMIT_SHA"
