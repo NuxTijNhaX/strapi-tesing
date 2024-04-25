@@ -19,5 +19,20 @@ steps:
       - "3"
       - "--region"
       - "asia-east1"
+  # Create and mount volumn
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
+    args:
+      - "beta"
+      - "run"
+      - "services"
+      - "update"
+      - "strapi-testing"
+      - "--execution-environment"
+      - "gen2"
+      - "--add-volume"
+      - "name=sqlite-volme,type=cloud-storage,bucket=sqlite-volumn"
+      - "--add-volume-mount"
+      - "volume=sqlite-volme,mount-path=/sqlite"
 images:
   - "gcr.io/$PROJECT_ID/strapi-testing:$COMMIT_SHA"
