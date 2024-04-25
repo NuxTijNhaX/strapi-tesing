@@ -26,4 +26,5 @@ ENV PATH /opt/node_modules/.bin:$PATH
 RUN chown -R node:node /opt/app
 USER node
 EXPOSE 8080
+RUN ls
 CMD ["npm", "run", "start"]
