@@ -33,7 +33,7 @@ steps:
       - "--add-volume"
       - "name=sqlite-volme,type=cloud-storage,bucket=sqlite-volumn"
       - "--add-volume-mount"
-      - "volume=sqlite-volme,mount-path=/sqlite"
+      - "volume=sqlite-volme,mount-path=/opt/app/sqlite"
       - "--region"
       - "asia-east1"
 images:
